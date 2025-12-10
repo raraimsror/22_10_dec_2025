@@ -50,7 +50,7 @@ function renderCityHistory() {
   history.forEach((cityData, index) => {
     const btn = document.createElement("button");
     btn.className = "button";
-    btn.textContent = `Загрузить город ${index + 1}: ${cityData.name}`;
+    btn.textContent = ` ${index + 1}. Save ${cityData.name}`;
     btn.onclick = () => displayWeather(cityData);
     lastCityData.appendChild(btn);
   });
