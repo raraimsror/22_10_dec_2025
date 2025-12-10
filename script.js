@@ -59,7 +59,6 @@ function renderCityHistory() {
 //  Функция запроса погоды
 async function fetchWeather(url) {
   try {
-    weatherInfo.innerHTML = `<img src="./Image20251208200339.gif" alt="loading" />`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(res.status);
     const data = await res.json();
@@ -85,6 +84,9 @@ weatherBtn.onclick = async () => {
     weatherInfo.innerHTML = `<p style="color:red">Введите название города!</p>`;
     return;
   }
+
+   weatherInfo.innerHTML = `<img src="./Image20251208200339.gif" alt="loading" />`;
+
   displayWeather(
     await fetchWeather(
       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=${lang}`
@@ -95,6 +97,9 @@ weatherBtn.onclick = async () => {
 //  Запрос погоды по геолокации
 geoWeatherBtn.onclick = async () => {
   try {
+
+     weatherInfo.innerHTML = `<img src="./Image20251208200339.gif" alt="loading" />`;
+
     // 1. Получаем координаты пользователя
     const position = await new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(resolve, reject);
