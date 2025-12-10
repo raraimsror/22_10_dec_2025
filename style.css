@@ -16,6 +16,13 @@ h1 {
   margin-top: 40px;
   text-align: center;
 }
+
+.form-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
 .city {
     display: flex;
     flex-direction: column;
@@ -60,4 +67,33 @@ button:hover {
 }
 .weather-icon {
   width: 120px;
+}
+/*********************************/
+
+
+
+.dark-theme {
+    background: linear-gradient(135deg, #121212, #333333); /* Tumšs fons */
+    color: #e0e0e0; /* Gaišs teksts visam */
+}
+
+/* peredelka items na dark themi */
+.dark-theme h1, 
+.dark-theme label {
+    color: #e0e0e0; 
+}
+
+.dark-theme input, 
+.dark-theme select {
+    background-color: #444; 
+    color: #e0e0e0;
+}
+
+.dark-theme button {
+    background: #007bff; /* podgon kraski knopki */
+}
+
+.dark-theme #weatherInfo {
+    background: rgba(255, 255, 255, 0.1); /* prozracnij na temnom fone */
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
 }

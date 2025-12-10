@@ -2,6 +2,18 @@ const API_KEY = "fa1e72ff893c6a4a5ed4077327e855b4";
 const cityValueInput = document.getElementById("cityValueInput");
 const weatherBtn = document.getElementById("weatherBtn");
 const weatherInfo = document.getElementById("weatherInfo");
+const themeCheckBox = document.getElementById("checkChecked");
+
+
+themeCheckBox.addEventListener("change", () => {
+  if (themeCheckBox.checked) {
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.remove("dark-theme");
+  }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("weather")) {
     const data = JSON.parse(localStorage.getItem("weather"));
