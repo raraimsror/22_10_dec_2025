@@ -3,7 +3,23 @@ const cityValueInput = document.getElementById("cityValueInput");
 const weatherBtn = document.getElementById("weatherBtn");
 const weatherInfo = document.getElementById("weatherInfo");
 const themeCheckBox = document.getElementById("checkChecked");
+const geoWeatherBtn = document.getElementById("geoWeatherBtn");
+const lastCityData = document.getElementById("dataSaves");
 
+lastCityData.innerHTML = `
+<button id="loadLastCityBtn1" class="btn btn-secondary">Load 1. City Weather</button>
+<button id="loadLastCityBtn2" class="btn btn-secondary">Load 2. City Weather</button>
+<button id="loadLastCityBtn3" class="btn btn-secondary">Load 3. City Weather</button>
+`;
+
+function lastCityLoadOfStorage(buttonId, storageKey) {
+  document.getElementById(buttonId).onclick = () => {
+    if (localStorage.getItem(storageKey)) {
+      const data = JSON.parse(localStorage.getItem(storageKey));
+      displayWeather(data);
+    }
+}
+}
 
 themeCheckBox.addEventListener("change", () => {
   if (themeCheckBox.checked) {
@@ -20,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     displayWeather(data);
   }
 });
+
 async function fetchWeather(url) {
   try {
     weatherInfo.innerHTML = `<img src="./Image20251208200339.gif" alt="loading" />`;
@@ -32,6 +49,7 @@ async function fetchWeather(url) {
     weatherInfo.innerHTML = `<p>Не удалось получить геолокацию</p>`;
   }
 }
+
 weatherBtn.onclick = async () => {
   const city = cityValueInput.value.trim();
   const lang = document.getElementById("langSelect").value;
@@ -41,7 +59,8 @@ weatherBtn.onclick = async () => {
     )
   );
 };
-const geoWeatherBtn = document.getElementById("geoWeatherBtn");
+
+
 geoWeatherBtn.onclick = async () => {
   try {
     // 1. Получаем координаты
@@ -59,6 +78,7 @@ geoWeatherBtn.onclick = async () => {
     weatherInfo.innerHTML = `<p>Не удалось получить геолокацию</p>`;
   }
 };
+
 function displayWeather({
   name,
   weather: [{ icon, description }],
