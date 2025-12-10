@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <div class="city">
+      <label for="cityValueInput">City Name:</label>
+      <input type="text" id="cityValueInput" placeholder="Enter city name..." />
+      <label for="langSelect">Language</label>
+      <select id="langSelect">
+        <option value="ru">Русский</option>
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="uk">Українська</option>
+      </select>
+      <button id="weatherBtn">Get Weather!</button>
+      <button id="geoWeatherBtn">Get Weather by Geolocation</button>
+      <div  id="weatherInfo"></div>
+    </div>
+  </body>
+</html>
