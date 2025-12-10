@@ -24,13 +24,13 @@ h1 {
   color: #fff;
 }
 .city {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
 }
 label {
-    font-size: 16px;
+  font-size: 16px;
 }
 input, select {
     padding: 10px;
@@ -38,9 +38,9 @@ input, select {
     border: none;
     outline: none;
     font-size: 16px;
-}
-button {
-  margin: 0px 10px 0px 10px;
+  }
+  button {
+    margin: 0px 10px 0px 10px;
     padding: 10px;
     background: #0984e3;
     color: white;
@@ -49,14 +49,15 @@ button {
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
-}
-button:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  button:hover {
     background: #74b9ff;
-}
-.city button:hover {
-  background: #0c6bd6;
-}
-.weatherInfo {
+  }
+  .city button:hover {
+    background: #0c6bd6;
+  }
+  .weatherInfo {
   background-color: #121212;
   margin-top: 40px;
   padding: 20px;
@@ -69,27 +70,55 @@ button:hover {
   width: 120px;
 }
 
+.reset-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background:  #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  
+}
+
+.reset-btn:hover {
+  background: #0c6bd6;
+}
+
 /*************** dark-theme ******************/
 
 .dark-theme {
   background: linear-gradient(135deg, #121212, #260c0c); /* temnij fon */
-    color: #e0e0e0;
+  color: #e0e0e0;
 }
 
 /* peredelka items na dark themi */
 .dark-theme h1, 
 .dark-theme label {
-    color: #e0e0e0; 
-  }
-  
-  .dark-theme input, 
-  .dark-theme select {
-    background-color: #444; 
-    color: #e0e0e0;
-  }
-  
+  color: #e0e0e0; 
+}
+
+.dark-theme input, 
+.dark-theme select {
+  background-color: #444; 
+  color: #e0e0e0;
+}
+
 .dark-theme button {
   background: #007bff; /* podgon kraski knopki */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); 
+}
+
+.dark-theme button:hover {
+   box-shadow: 
+    0 0 30px rgba(0, 123, 255, 0.4),
+
+    0 0 30px rgba(0, 123, 255, 0.4); 
 }
 
 .dark-theme #weatherInfo {

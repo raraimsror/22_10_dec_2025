@@ -5,6 +5,16 @@ const weatherInfo = document.getElementById("weatherInfo");
 const themeCheckBox = document.getElementById("checkChecked");
 const geoWeatherBtn = document.getElementById("geoWeatherBtn");
 const lastCityData = document.getElementById("dataSaves");
+const resetBtn = document.getElementById("resetBtn");
+
+//Здесь я наконец добавил кнопку «Reset».
+//  Очистка истории и последней погоды
+resetBtn.addEventListener("click", () => {
+  localStorage.removeItem("cityHistory");
+  localStorage.removeItem("weather");
+  weatherInfo.innerHTML = "<p>Данные очищены</p>";
+  lastCityData.innerHTML = "";
+});
 
 //  Переключение темы (светлая/тёмная)
 themeCheckBox.addEventListener("change", () => {
@@ -39,7 +49,7 @@ function renderCityHistory() {
 
   history.forEach((cityData, index) => {
     const btn = document.createElement("button");
-    btn.className = "btn btn-secondary m-1";
+    btn.className = "button";
     btn.textContent = `Загрузить город ${index + 1}: ${cityData.name}`;
     btn.onclick = () => displayWeather(cityData);
     lastCityData.appendChild(btn);
