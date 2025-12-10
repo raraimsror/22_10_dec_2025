@@ -73,8 +73,8 @@ button:hover {
 
 
 .dark-theme {
-    background: linear-gradient(135deg, #121212, #333333); /* Tumšs fons */
-    color: #e0e0e0; /* Gaišs teksts visam */
+    background: linear-gradient(135deg, #121212, #260c0c); /* temnij fon */
+    color: #e0e0e0;
 }
 
 /* peredelka items na dark themi */
